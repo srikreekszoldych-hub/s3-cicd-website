@@ -4,7 +4,7 @@ name: Deploy website to S3
 on:
   push:
     branches:
-      - main
+      - main
 
 
 jobs:
@@ -28,6 +28,6 @@ jobs:
       - name: Deploy to S3
         run: |
           aws s3 sync .
- s3://YOUR_BUCKET_NAME --delete \
+ s3://srijith-static-site-001 --delete \
             --exclude ".git/*" \
             --exclude ".github/*"
